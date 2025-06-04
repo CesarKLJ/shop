@@ -1,13 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>VanguardGames</title>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador de Clicks</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.blogs.es/d5130c/wallpaper-2.png/840_560.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-shadow: 1px 1px 4px #000;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 6vw;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: linear-gradient(to right, #3b82f6, #1e40af);
+      color: white;
+      padding: 12px 24px;
+      font-size: 5vw;
+      max-width: 90%;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 5vw;
+      font-weight: bold;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 40px;
+      }
+
+      button {
+        font-size: 24px;
+        padding: 15px 30px;
+      }
+
+      p {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <h1>Contador de Clicks</h1>
+  <button onclick="incrementar()">Haz clic aquí</button>
+  <p id="contador">Clicks: 0</p>
 
-    <p>¿Eres un fan de los videojuegos? ¿Te gustaría saber más sobre ellos? ¡Visita esta página web!</p>
+  <script>
+    let count = 0;
 
+    function incrementar() {
+      count++;
+      document.getElementById("contador").textContent = "Clicks: " + count;
+    }
+  </script>
 </body>
 </html>
